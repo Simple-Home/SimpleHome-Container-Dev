@@ -2,7 +2,7 @@ version: "3.7"
 services:
   app:
     build:
-      context: ./dev
+      context: .
       dockerfile: Dockerfile
     restart: on-failure
     ports:
