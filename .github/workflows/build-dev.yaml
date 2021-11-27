@@ -11,9 +11,6 @@ env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
-defaults:
-  run:
-    working-directory: ./dev
 
 jobs:
   build-and-push-dev-image:
@@ -43,7 +40,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          file: ./dev/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
